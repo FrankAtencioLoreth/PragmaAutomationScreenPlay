@@ -1,0 +1,36 @@
+plugins{
+    id 'java'
+    id "net.serenity-bdd.serenity-gradle-plugin" version "3.4.2"
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+
+ext {
+    serenityVersion = '2.0.82'
+    serenityCucumberVersion = '1.9.45'
+    seleniumVersion = '3.14.0'
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.9.0'
+    implementation 'org.slf4j:slf4j-simple:1.7.30'
+    testImplementation "org.assertj:assertj-core:3.11.1"
+    implementation 'org.slf4j:slf4j-simple:1.7.30'
+    implementation "net.serenity-bdd:serenity-core:$rootProject.ext.serenityVersion"
+    implementation "net.serenity-bdd:serenity-junit:$rootProject.ext.serenityVersion"
+    implementation "net.serenity-bdd:serenity-cucumber:$rootProject.ext.serenityCucumberVersion"
+    implementation "net.serenity-bdd:serenity-screenplay:$rootProject.ext.serenityVersion"
+    implementation "net.serenity-bdd:serenity-screenplay-webdriver:$rootProject.ext.serenityVersion"
+    implementation "org.seleniumhq.selenium:selenium-server:$rootProject.ext.seleniumVersion"
+}
+
+test {
+    useJUnitPlatform()
+}
