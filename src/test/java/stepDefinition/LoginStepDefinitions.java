@@ -19,7 +19,7 @@ public class LoginStepDefinitions {
     @Before
     public void setUp() {
         OnStage.setTheStage(new OnlineCast());
-    }//
+    }
 
     @Given("^El cliente abre la pagina web$")
     public void elClienteAbreLaPaginaWeb() {
